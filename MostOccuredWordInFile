@@ -1,0 +1,23 @@
+import string
+
+f = open("C:\\Users\\asus\\Desktop\\Poem.txt", "r")
+d = dict()
+
+for line in f:
+    line = line.strip()     # Remove the leading spaces and newline character
+    line = line.lower()     # Convert the characters in line to lowercase to avoid case mismatch
+    line = line.translate(line.maketrans("", "", string.punctuation))        # Remove the punctuation marks from the line
+    words = line.split(" ")
+    for word in words:
+        if word in d:
+            d[word] = d[word]+1
+        else:
+            d[word] = 1
+max_occ = 0
+for key in list(d.keys()):
+    if max_occ < d[key]:
+        max_occ = d[key]
+print("Max number of times a word occured is : ", max_occ)
+for key in list(d.keys()):
+    if max_occ == d[key]:
+        print("Max occured word is : " , key)
