@@ -15,6 +15,7 @@ for line in f:
             d[word] = 1
 max_occ = 0
 for key in list(d.keys()):
+    print(key, ":", d[key])
     if max_occ < d[key]:
         max_occ = d[key]
 print("Max number of times a word occured is : ", max_occ)
