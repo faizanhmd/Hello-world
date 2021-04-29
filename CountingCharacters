@@ -1,0 +1,19 @@
+#File created by Faizan Hamid on 2/02/2021
+
+import pprint as pp
+
+message = '''Guts and hope. As Indians, we have both of these traits in abundance. 
+Sometimes these illustrious traits lead us to wonderful outcomes, and in other instances to foolish ones. 
+What else would explain the current COVID mess that we have landed ourselves in, 
+where we now boast of the largest number of positive cases in the world. But then, we have God on our side. 
+Clearly, when we thronged in millions at the Kumbh Mela during a pandemic, we believed God would save us from any harm. 
+Guess what, he didn’t. But, fortunately, something else probably will. 
+We have hope and we will show courage in the face of adversity to find innovative solutions. 
+That is what we do as Indians. We will find a way through this mess, together.'''
+
+Letters_count_dict ={}
+for i in message.upper():       #upper converts all letters in message to upppercase
+    Letters_count_dict.setdefault(i,0)      #setdefault checks whether i is present in dict: if not then it creates and put value as 0 (in ths case)
+    Letters_count_dict[i] = Letters_count_dict[i] + 1
+
+pp.pprint(Letters_count_dict)       #pprint() lets key value pair after sorting it alphabetically
